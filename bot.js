@@ -62,7 +62,6 @@ const actions = {
     }
 
     cb(context);
-    delete context.loc;
 
   },
 
@@ -76,6 +75,11 @@ const actions = {
     // context.forecast = apiCall(context.loc)
     context.forecast = 'sunny';
     cb(context);
+  },
+  
+  ['clear-context'](sessionId, context, cb) {
+  context = null
+  cb(context)
   },
 };
 
